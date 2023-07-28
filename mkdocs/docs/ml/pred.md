@@ -1,3 +1,0 @@
-# CH-Net Future Frame Prediction 
-
-Soon to come, yet to be implemented ...

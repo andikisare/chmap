@@ -1,8 +1,0 @@
-# Coronal Hole Area Overlap
-The final step in accurately matching CHs between frames is to evaluate the area overlapping the two regions. 
-Say we have a new coronal hole that was identified in the latest frame and yet to be classified, denoted by $S_{0}$. Let $C_{1}$ denote a class of coronal holes where $C_{1} = \{S_{1}, S_{2}, ..., S_{m} \}$. Assuming [kNN](knn.md) algorithm resulted in a high probability of the new identified coronal hole to be associated with $C_{1}$, we will now measure their area overlap. The area overlap will be measured as a weighted average, so 
-
-$$ P = \frac{1}{\sum_{j=1}^{m} w_{j}} \sum_{j=1}^{m} \frac{w_{j}}{2} [\frac{A(S_{j} \cap S_{0})}{A(S_{0})} + \frac{A(S_{j} \cap S_{0})}{A(S_{j})}]$$
-
-
-where the weights are denoted by $w_{j} = \frac{1}{f_{j} - f_{0}}$; $f_{j}$ denotes the frame number of $S_{j}$, and $f_{0}$ is the latest frame number. Therefore, the associated weight is related to the coronal hole frame proximity to the new identified $S_{0}$. Then, if the average area overlap is higher than some threshold (\texttt{AreaMatchThresh}- hyper parameter, Table 1), we classify the new CH as a previously detected CH, otherwise, it will get a new unique ID. In the case where there is high overlap with more than one class, we have the case of CHs merging. The merged CH will get the parent ID with the highest area overlap. However, in the connectivity graph (Sec. [Connectivity](connectivity.md)) the merged CH will be linked to all parent CH nodes.

@@ -1,2 +1,0 @@
-""" Tracking Algorithm source code. """
-
