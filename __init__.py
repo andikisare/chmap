@@ -1,5 +1,7 @@
 from cmfpy.chmetric.chmap.ezsegwrapper import ezseg
 import numpy as npy
+from numba import jit, njit
+
 __all__ = ['ezseg']
 
 # EZSEG
@@ -56,6 +58,7 @@ __all__ = ['ezseg']
 #----------------------------------------------------------------------
 
 # python version
+@njit
 def ezsegpy(IMG,SEG,nt,np,thresh1,thresh2,nc,iters):
       local_vec = npy.arange(15)
       SEG_TMP=SEG
