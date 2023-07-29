@@ -1,4 +1,4 @@
-import coronamagpy.chmetric.chmap.ezsegwrapper as ezsegwrapper
+import cmfpy.chmetric.chmap.ezsegwrapper as ezsegwrapper
 import numpy as npy
 
 # EZSEG
