@@ -1,5 +1,6 @@
-import cmfpy.chmetric.chmap.ezsegwrapper as ezsegwrapper
+from cmfpy.chmetric.chmap.ezsegwrapper import ezseg
 import numpy as npy
+__all__ = ['ezseg']
 
 # EZSEG
 #
@@ -53,9 +54,6 @@ import numpy as npy
 # SOFTWARE.
 #
 #----------------------------------------------------------------------
-
-# fortran version
-def ezseg(*args): ezsegwrapper.ezseg(*args)
 
 # python version
 def ezsegpy(IMG,SEG,nt,np,thresh1,thresh2,nc,iters):

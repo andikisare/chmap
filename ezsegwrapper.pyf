@@ -5,7 +5,7 @@ python module ezsegwrapper ! in
     interface  ! in :ezsegwrapper
         subroutine ezseg(img,seg,nt,np,thresh1,thresh2,nc,iters) ! in :ezsegwrapper:ezseg.f
             real*4 dimension(nt,np),intent(in) :: img
-            real*4 dimension(nt,np),intent(out,in),depend(np,nt) :: seg
+            real*4 dimension(nt,np),intent(out,in),depend(nt,np) :: seg
             integer, optional,intent(in),check(shape(img, 0) == nt),depend(img) :: nt=shape(img, 0)
             integer, optional,intent(in),check(shape(img, 1) == np),depend(img) :: np=shape(img, 1)
             real*4 intent(in) :: thresh1
